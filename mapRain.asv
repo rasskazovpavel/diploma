@@ -1,0 +1,12 @@
+function intensivity = mapRain(image)
+    RGB = impixel(image, 500, 500);
+    intensivity = 0;
+    if RGB(3) >= 190 && RGB(3) <= 210
+         = 2;
+    end
+    if RGB(3) >= 160 && RGB(3) <= 190
+       RGB = 5; 
+    end
+    if RGB(3) < 160
+        RGB = 10;
+end

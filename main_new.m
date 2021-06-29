@@ -52,17 +52,16 @@ for i = 1:length(times)
     times(i) = times(i) + delays(count); %прибавляем задержку к времени отсчёта сигнала
 end
 
-omega = 1 * 10 ^ (-3); %водность в облаках
-lambda = 3 * 10 ^ (-2); %длина волны
-I = 50; %интенсивность осадков [мм/ч]
-a = 0.0074; %эмпирическая величина
-b = 1.31; %эмпирическая величина
-
 distancesArray = distances(timesDistance, receiverGeocen, objectGeocen, objectVelocity); %массив значений расстояния между спутником и приёмником
 coefficients = 1 ./ (4 * pi * distancesArray); %массив значений коэффициента ослабления из-за расстояния
 coefficients = coefficients .* objectWeakening(VObject, receiverGeocen, objectGeocen, objectVelocity, timesDistance); %добавляем коэффициент ослабления из-за диаграммы направленности объекта
 coefficients = coefficients .* receiverWeakening(VReceiver, receiverGeocen, objectGeocen, objectVelocity, timesDistance, wgs84); %добавляем коэффициент ослабления из-за диаграммы направленности приёмника
 
+omega = 1 * 10 ^ (-3); %водность в облаках
+lambda = 3 * 10 ^ (-2); %длина волны
+I = 50; %интенсивность осадков [мм/ч]
+a = 0.0074; %эмпирическая величина
+b = 1.31; %эмпирическая величина
 cloudThickness = 10; %толщина облаков
 rainThickness = 10; %толщина дождевого слоя
 
