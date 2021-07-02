@@ -39,7 +39,7 @@ times = 0:5*10^(-9):0+timeFinish; %период дискретизации дл�
 timesDistance = 0:3*10^(-4):0+timeFinish; %период дискретизации для расстояний
 timesTau = 0:4*10^(-6):0+timeFinish; %период дискретизации для задержки
 
-delays = taus(timesTau, receiverGeocen, objectGeocen, objectVelocity); %массив значений задержки
+delays = taus(timesTau, receiverGeocen, objectGeocen, objectVelocity) %массив значений задержки
 count = 1;
 
 %находим в цикле для каждого отсчёта времени для сигнала соответствующую задержку
@@ -82,4 +82,4 @@ for i = 1:length(times)
     signalTimes(i) = signalTimes(i) * coefficients(count); %умножаем значение сигнала на соответствующий коэффициент
 end
 
-plot(times, signalTimes);
+%plot(times, signalTimes);

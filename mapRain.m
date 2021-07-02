@@ -9,4 +9,5 @@ function intensivity = mapRain(image)
     end
     if RGB(3) < 160
         intensivity = 10;
+    end
 end

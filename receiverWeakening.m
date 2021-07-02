@@ -7,7 +7,6 @@ function VqReceiver = receiverWeakening(VReceiver, receiverGeocen, objectGeocen,
     azFixed = 0; %направление на спутник по азимуту
     count = 0;
     for time = timesDistance
-        %вектор объект - приёмник
         objectReceiver = [receiverGeocen(1) - objectVelocity(1) * time - objectGeocen(1), receiverGeocen(2) - objectVelocity(2) * time - objectGeocen(2), receiverGeocen(3) - objectVelocity(3) * time - objectGeocen(3)];
         %вектор вертикали
         objectHeight =  - objectGeocen - objectVelocity * time;
